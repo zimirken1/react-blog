@@ -11,7 +11,6 @@ import PostService from "../API/PostService";
 import Loader from "../components/UI/Loader/Loader";
 import {useFetching} from "../components/hooks/useFetching";
 import {getPagesCount} from "../components/utils/pages";
-import {usePagination} from "../components/hooks/usePagination";
 import Pagination from "../components/UI/pagination/Pagination";
 
 const Posts = () => {
@@ -22,12 +21,6 @@ const Posts = () => {
     const [totalPages, setTotalPages] = useState(0)
     const [page, setPage] = useState(1)
     const [limit, setLimit] = useState(10)
-    // let pagesArray = getPagesArray(totalPages);
-    // for (let i = 0; i < totalPages; i++) {
-    //     pagesArray.push(i++);
-    // }
-
-
 
     const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
         const response = await PostService.getAll(limit, page);
