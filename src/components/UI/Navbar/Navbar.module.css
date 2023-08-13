@@ -1,0 +1,38 @@
+.navbar {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 70px;
+    background: white;
+    gap: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.navbar__logo {
+    font-family: 'Mulish', sans-serif;
+    font-size: 24px;
+    color: teal;
+    cursor: pointer;
+}
+
+.navbar__links {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    margin: auto;
+}
+
+.navbar__link {
+    font-size: 18px;
+    color: teal;
+    text-decoration: none;
+}
+
+.navbar__link:hover {
+    text-decoration: underline;
+}
+
+

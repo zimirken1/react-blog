@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import {useFetching} from "../components/hooks/useFetching";
 import PostService from "../API/PostService";
 import Loader from "../components/UI/Loader/Loader";
+import '../styles/PostIdPage.css'
 
 const PostIdPage = () => {
     const [post, setPost] = useState({});
@@ -24,33 +25,34 @@ const PostIdPage = () => {
     }, [])
 
     return (
-        <div>
-            <h1>Страница поста {params.id}</h1>
+        <div className={"post-id-page"}>
             {isLoading
                 ? <Loader/>
-                : <div>
-                    <div>
-                        {post.id}. {post.title}
+                : <div className={"post-id-page__wrapper"}>
+                    <div className={"post-id-page__wrapper title"}>
+                        {post.title}
                     </div>
-                    <div>
+                    <div className={"post-id-page__wrapper body"}>
                         {post.body}
                     </div>
-            </div>
-            }
-            <h1>
-                Комментарии
-            </h1>
-            {isComLoading
-                ? <Loader/>
-                : <div>
-                    {comments.map(comm =>
-                        <div key={comm.id}>
-                            <h5>{comm.email}</h5>
-                            <div>{comm.body}</div>
-                        </div>
-                    )}
                 </div>
             }
+            <div className={"post-id-page__wrapper comments"}>
+                <h1>
+                    Комментарии
+                </h1>
+                {isComLoading
+                    ? <Loader/>
+                    : <div>
+                        {comments.map(comm =>
+                            <div key={comm.id}>
+                                <h5>{comm.email}</h5>
+                                <div>{comm.body}</div>
+                            </div>
+                        )}
+                    </div>
+                }
+            </div>
         </div>
     );
 };

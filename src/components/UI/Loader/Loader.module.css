@@ -1,16 +1,29 @@
 .loader {
-    width: 100px;
-    height: 100px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    border: 3px dashed teal;
-    animation: rotate 1s infinite linear;
+    display: block;
+    margin:15px auto;
+    position: relative;
+    color: #FFF;
+    box-sizing: border-box;
+    animation: animloader 2s linear infinite;
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg) scale(1);
+@keyframes animloader {
+    0% {
+        box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
     }
-    to {
-        transform: rotate(360deg) scale(1.4);
+    25% {
+        box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 2px;
+    }
+    50% {
+        box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 2px,  -38px 0 0 -2px;
+    }
+    75% {
+        box-shadow: 14px 0 0 2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+    }
+    100% {
+        box-shadow: 14px 0 0 -2px,  38px 0 0 2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
     }
 }

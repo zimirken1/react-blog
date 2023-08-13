@@ -1,0 +1,30 @@
+.post-id-page {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-id-page__wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.body {
+    font-size: 20px;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}

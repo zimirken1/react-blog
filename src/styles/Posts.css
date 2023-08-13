@@ -1,0 +1,49 @@
+.post-page {
+    width: 800px;
+}
+
+.post-page__operations {
+    margin: 10px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-page__sort-options {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    display: flex;
+    padding: 15px;
+    border: 2px solid lightseagreen;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post__btns {
+    gap: 5px;
+    display: flex;
+}
+
+.post-enter {
+    opacity: 0;
+}
+
+.post-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.post-exit {
+    opacity: 1;
+}
+
+.post-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+}
+

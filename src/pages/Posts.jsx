@@ -14,6 +14,7 @@ import {getPagesCount} from "../components/utils/pages";
 import Pagination from "../components/UI/pagination/Pagination";
 import {useObserver} from "../components/hooks/useObserver";
 import MySelect from "../components/UI/select/MySelect";
+import '../styles/Posts.css'
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
@@ -54,32 +55,35 @@ const Posts = () => {
     }
 
     return (
-        <div className={"App"}>
-            <MyButton onClick={() => setModal(true)}>
-                Создать пост
-            </MyButton>
-            <MyModal
-                visible={modal}
-                setVisible={setModal}
-            >
-                <PostForm create={createPost}/>
-            </MyModal>
-            <hr/>
-            <PostFilter
-                filter={filter}
-                setFilter={setFilter}
-            />
-            <MySelect
-                value={limit}
-                onChange={value =>  setLimit(value)}
-                defaultValue={"Кол-во элементов на странице"}
-                options={[
-                    {value: 5, name: "5"},
-                    {value: 10, name: "10"},
-                    {value: 25, name: "25"},
-                    {value: -1, name: "Показать все "},
-                ]}
-            />
+        <div className={"post-page"}>
+            <div className={"post-page__operations"}>
+                <MyButton onClick={() => setModal(true)}>
+                    Создать пост
+                </MyButton>
+                <MyModal
+                    visible={modal}
+                    setVisible={setModal}
+                >
+                    <PostForm create={createPost}/>
+                </MyModal>
+                <div className={"post-page__sort-options"}>
+                    <PostFilter
+                        filter={filter}
+                        setFilter={setFilter}
+                    />
+                    <MySelect
+                        value={limit}
+                        onChange={value => setLimit(value)}
+                        defaultValue={"Кол-во элементов на странице"}
+                        options={[
+                            {value: 5, name: "5"},
+                            {value: 10, name: "10"},
+                            {value: 25, name: "25"},
+                            {value: -1, name: "Показать все "},
+                        ]}
+                    />
+                </div>
+            </div>
             {postError &&
                 <h1>Произошла ошибка ${postError}</h1>
             }
